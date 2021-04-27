@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>jQuery Selectors Demo</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<div>jQuery is Fun!</div>
+		<br/>
+		<div id='sel_id'>This is an ad</div>
+		<br/>
+		<p>This is my <span class='sel_class'>new</span> jQuery Selector Demo</p>
+		<script>
+			jq = $.noConflict(); // To avoid conflict with $ function with other programming languages
+			jq('div').css('background', 'lime')
+			jq('#sel_id').css('border', '3px dashed red')
+			jq('.sel_class').css('text-decoration', 'underline')
+			jq('div, #sel_id, .sel_class').css('font-weight', 'bold')
+		</script>
+	</body>
+</html>

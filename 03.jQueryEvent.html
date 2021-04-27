@@ -1,0 +1,47 @@
+
+<html>
+	<head>
+		<title>Events: blur</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<h2>Click in and out of these fields</h2>
+		<input id='first'> </input>
+		<input id='second'> </input>
+		<input id='third'> </input>
+		<input id='fourth'> </input>
+		<br/>
+		<button id='clickme1'>Click Me</button> 
+		<button id='clickme2' class='myclass'>Click Me</button>
+		<button id='clickme3' class='myclass'>Click Me</button>
+		
+		<p id='result'>I am a paragraph</p>
+		
+		<script>
+			$('#clickme1').click(function()
+			{
+				$('#result').html('You clicked the button!');
+				$('.myclass').show();
+			})
+	
+			$('#fourth').focus();
+			$('input').focus(function() { $(this).css('background', '#ff0') } );
+			$('input') .blur(function() { $(this).css('background', '#aaa') } );
+			
+			$('.myclass').click( function() { $(this).slideUp() });
+			$('.myclass').dblclick( function() { $(this).hide() });
+			
+			$('#first').keypress(function(event){
+				key = String.fromCharCode(event.which)
+				if (key >= 'a' && key <= 'z' ||
+					key >= 'A' && key <= 'Z' ||
+					key >= '0' && key <= '9')
+				{
+					$('#result').html('You pressed: ' + key)
+				}
+			});
+			
+			
+		</script>
+	</body>
+</html>

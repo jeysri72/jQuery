@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang = "en">
+   <head>
+      <meta charset = "utf-8">
+      <title>jQuery UI Switch Class Example</title>
+      <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <style>
+         .LargeClass {
+            font-family: Arial;
+            font-size: large;
+            font-weight: bold;
+            color: Red;
+         }
+         .NormalClass {
+            font-family: Arial;
+            font-size: small;
+            font-weight: bold;
+            color: Blue;
+         }
+      </style>
+<script>
+         $(function() {
+            $('#btnSwitch').click(function() {
+               $(".NormalClass").switchClass("NormalClass","LargeClass",'fast');
+               $(".LargeClass").switchClass("LargeClass","NormalClass",'fast');
+               return false;
+            });
+         });
+      </script>
+   </head> <body> <div class = "NormalClass">
+         Lithan Rocks !!!
+      </div> <div class = "NormalClass">
+         Welcome to Lithan
+      </div> <br /> <input type = "button" id = "btnSwitch" value = "Switch Class" />
+   </body></html>

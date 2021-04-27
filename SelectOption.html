@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Select Option Value</title
+  <!-- refer the jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+<!-- selection box with the options -->
+<select id="modules">
+  <option value="M1">Front End Programming</option>
+  <option value="M2">Web Design and Prototyping</option>
+  <option value="M3">Databse Implementation with MySQL</option>
+  <option value="M4">Programming Basics</option>
+  <option value="M5">Python Framework and Web Services</option>
+  <option value="M6">Capstone Project using Python</option>
+</select>
+
+<p>You have selected</p>
+<!-- division to display the selected option -->
+<div></div>
+ 
+<!-- you guys need this code snippet to perform your project task --> 
+<script>
+<!--use id selector (modules) to enable the change event -->
+$( "#modules" )
+  .change(function () {
+    var selectedOption = "";
+	<!-- To get the value and text of the selected option-->
+    $( "select option:selected" ).each(function() {
+      selectedOption +=  $(this). val() + " - " + $( this ).text();
+    });
+	<!-- display the selection in division -->
+    $( "div" ).text( selectedOption );
+	})
+  .change();
+</script>
+ 
+</body>
+</html>
